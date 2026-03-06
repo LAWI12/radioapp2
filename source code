@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class javaapp2 extends JFrame {
+    private JLabel pictureLabel;
+
+    public javaapp2() {
+        setSize(400, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        JRadioButton jRadioButton2 = new JRadioButton("Bird");
+        JRadioButton jRadioButton6 = new JRadioButton("Cat");
+        JRadioButton jRadioButton3 = new JRadioButton("Dog");
+        JRadioButton jRadioButton4 = new JRadioButton("Rabbit");
+        JRadioButton jRadioButton5 = new JRadioButton("Pig");
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(jRadioButton2);
+        group.add(jRadioButton6);
+        group.add(jRadioButton3);
+        group.add(jRadioButton4);
+        group.add(jRadioButton5);
+
+        add(jRadioButton2);
+        add(jRadioButton6);
+        add(jRadioButton3);
+        add(jRadioButton4);
+        add(jRadioButton5);
+
+        pictureLabel = new JLabel();
+        add(pictureLabel);
+
+        jRadioButton2.addActionListener(e -> pictureLabel.setIcon(new ImageIcon("image/bird.jpg")));
+        jRadioButton6.addActionListener(e -> pictureLabel.setIcon(new ImageIcon("image/cat.jpg")));
+        jRadioButton3.addActionListener(e -> pictureLabel.setIcon(new ImageIcon("image/dog.jpg")));
+        jRadioButton4.addActionListener(e -> pictureLabel.setIcon(new ImageIcon("image/rabbit.jpg")));
+        jRadioButton5.addActionListener(e -> pictureLabel.setIcon(new ImageIcon("image/pig.jpg")));
+    }
+
+    public static void main(String[] args) {
+        new javaapp2().setVisible(true);
+    }
+}
